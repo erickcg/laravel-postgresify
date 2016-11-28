@@ -47,33 +47,13 @@ abstract class RangeType extends AbstractType
     }
 
     /**
-     * Return boolean as to whether the upper bound is inclusive.
-     *
-     * @return mixed
-     */
-    protected function getIsUpperBoundInclusive()
-    {
-        return $this->upperBoundInclusive;
-    }
-
-    /**
      * Returns the range's lower bound.
      *
      * @return mixed
      */
     protected function getLowerBound()
     {
-        return $this->lowerBound;
-    }
-
-    /**
-     * Returns the range's upper bound.
-     *
-     * @return mixed
-     */
-    protected function getUpperBound()
-    {
-        return $this->upperBound;
+        return $this->lowerBound - 0;
     }
 
     /**
@@ -89,6 +69,16 @@ abstract class RangeType extends AbstractType
     }
 
     /**
+     * Returns the range's upper bound.
+     *
+     * @return mixed
+     */
+    protected function getUpperBound()
+    {
+        return ($this->getIsUpperBoundInclusive()) ? $this->upperBound : ($this->upperBound - 1);
+    }
+
+    /**
      * Sets the upper bound of the range.
      *
      * @param $value
@@ -98,6 +88,16 @@ abstract class RangeType extends AbstractType
     {
         $this->upperBoundInclusive = $inclusive;
         $this->upperBound = $value;
+    }
+
+    /**
+     * Return boolean as to whether the upper bound is inclusive.
+     *
+     * @return mixed
+     */
+    protected function getIsUpperBoundInclusive()
+    {
+        return $this->upperBoundInclusive;
     }
 
     /**
