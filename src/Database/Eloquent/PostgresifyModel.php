@@ -17,7 +17,7 @@ class PostgresifyModel extends Model
     public function setAttribute($key, $value)
     {
         if (in_array($key, array_keys($this->postgresifyCasts))) {
-            if (!is_object($value) && in_array($this->postgresifyCasts[$key]['type'], $this->postgresifyPrimitiveCasts)) {
+            if (!is_object($value) && in_array($this->postgresifyCasts[$key], $this->postgresifyPrimitiveCasts)) {
                 $value = self::mutateToPgArray($value);
             }
         }
@@ -29,7 +29,7 @@ class PostgresifyModel extends Model
         $value = parent::getAttributeValue($key);
 
         if (!is_null($value) && in_array($key, array_keys($this->postgresifyCasts))) {
-            if (in_array($this->postgresifyCasts[$key]['type'], $this->postgresifyPrimitiveCasts)) {
+            if (in_array($this->postgresifyCasts[$key], $this->postgresifyPrimitiveCasts)) {
                 return self::accessPgArray($value);
             }
             $postgresifyTypeCaster = new PostgresifyTypeCaster();
