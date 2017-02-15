@@ -16,11 +16,10 @@ class PostgresifyModel extends Model
 
     public function setAttribute($key, $value)
     {
-        if (in_array($key, array_keys($this->postgresifyCasts))) {
-            if (!is_object($value) && in_array($this->postgresifyCasts[$key], $this->postgresifyPrimitiveCasts)) {
-                $value = self::mutateToPgArray($value);
-            }
+        if ($this->hasCast($key, $this->postgresifyPrimitiveCasts)) {
+            $value = self::mutateToPgArray($value);
         }
+
         return parent::setAttribute($key, $value);
     }
 
@@ -29,9 +28,6 @@ class PostgresifyModel extends Model
         $value = parent::getAttributeValue($key);
 
         if (!is_null($value) && in_array($key, array_keys($this->postgresifyCasts))) {
-            if (in_array($this->postgresifyCasts[$key], $this->postgresifyPrimitiveCasts)) {
-                return self::accessPgArray($value);
-            }
             $postgresifyTypeCaster = new PostgresifyTypeCaster();
             return $postgresifyTypeCaster->cast(
                 $key,
@@ -45,11 +41,22 @@ class PostgresifyModel extends Model
 
     protected function castAttribute($key, $value)
     {
-        if ($this->getCastType($key) == 'array') {
+        if ($this->hasCast($key, $this->postgresifyPrimitiveCasts)) {
             return self::accessPgArray($value);
         }
 
         return parent::castAttribute($key, $value);
+    }
+
+    /**
+     * Override to exclude array as JSON castable.
+     *
+     * @param  string $key
+     * @return bool
+     */
+    protected function isJsonCastable($key)
+    {
+        return $this->hasCast($key, ['json', 'object', 'collection']);
     }
 }
 
