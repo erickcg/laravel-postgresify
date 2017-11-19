@@ -48,7 +48,7 @@ abstract class RangeType extends AbstractType
             || ($pgValue[0] != '[' && $pgValue[0] != '(')
             || ($pgValue[strlen($pgValue) - 1] != ']' && $pgValue[strlen($pgValue) - 1] != ')')
         ) {
-            throw new \Exception("Not valid Postgres numrange data - bounds");
+            throw new \Exception("Not valid Postgres range data - bounds");
         }
         if ($pgValue[0] == '[') {
             $this->lowerBoundInclusive = true;
@@ -65,7 +65,7 @@ abstract class RangeType extends AbstractType
         $values = explode(',', substr($pgValue, 1, -1));
 
         if (count($values) != 2) {
-            throw new \Exception("Not valid Postgres numrange data - values");
+            throw new \Exception("Not valid Postgres range data - values");
         }
         $this->lowerBound = $values[0];
         $this->upperBound = $values[1];
