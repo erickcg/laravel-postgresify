@@ -5,6 +5,7 @@ namespace Aejnsn\Postgresify\Database\Eloquent;
 use Aejnsn\Postgresify\PostgresifyTypeCaster;
 use Aejnsn\Postgresify\Types\IntegerRange;
 use Aejnsn\Postgresify\Types\NumericRange;
+use Aejnsn\Postgresify\Types\TimestampRange;
 use Illuminate\Database\Eloquent\Model;
 use Smiarowski\Postgres\Model\Traits\PostgresArray;
 
@@ -17,6 +18,7 @@ class PostgresifyModel extends Model
         if ($this->hasCast($key)) {
             switch ($this->getCastType($key)) {
                 case 'array':
+                    $value = ($value == null) ? [] : $value;
                     $value = self::mutateToPgArray($value);
                     break;
             }
@@ -35,6 +37,8 @@ class PostgresifyModel extends Model
                 return self::accessPgArray($value);
             case 'numericrange':
                 return (new NumericRange(0, 0))->fromPgValues($value);
+            case 'timestamprange':
+                return (new TimestampRange(0, 0))->fromPgValues($value);
             case 'integerrange':
                 return (new IntegerRange(0, 0))->fromPgValues($value);
         }
