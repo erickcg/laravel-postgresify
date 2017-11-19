@@ -4,7 +4,7 @@ namespace Aejnsn\Postgresify\Types;
 
 use Exception;
 
-abstract class AbstractType
+abstract class AbstractType implements \JsonSerializable
 {
     /**
      * Output the type to a string, in the PostgreSQL preferred format.
@@ -12,6 +12,17 @@ abstract class AbstractType
      * @return string
      */
     abstract public function __toString();
+
+    /**
+     * Output the type to a JSON string
+     *
+     * @return string
+     */
+//    abstract public function jsonSerialize();
+    public function jsonSerialize()
+    {
+        return $this->__toString();
+    }
 
     /**
      * Get the type's properties dynamically.
