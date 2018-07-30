@@ -92,7 +92,7 @@ To install this package you will need:
 This package is intended for **PostgreSQL 9.4+**.
 
 Add this package to your ```composer.json``` file as a dependency:
-```composer require aejnsn/postgresify dev-master```
+```composer require martimarkov/postgresify```
 
 ### Laravel
 
@@ -120,7 +120,7 @@ class CreateHotelsTable extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->dateRange('reservation');
-        
+
             // Build your schema using PostgreSQL's awesome types...
         });
     }
