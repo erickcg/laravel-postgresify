@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\Postgresify\Types;
+namespace MartiMarkov\Postgresify\Types;
 
 class IpAddress extends AbstractType implements GeometricFigureInterface
 {

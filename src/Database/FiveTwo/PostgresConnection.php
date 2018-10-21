@@ -1,9 +1,9 @@
 <?php
 
-namespace Aejnsn\Postgresify\Database\FiveTwo;
+namespace MartiMarkov\Postgresify\Database\FiveTwo;
 
-use Aejnsn\Postgresify\Database\FiveTwo\Schema\PostgresifyBuilder;
-use Aejnsn\Postgresify\Database\Schema\Grammars\PostgresGrammar as PostgresifySchemaGrammar;
+use MartiMarkov\Postgresify\Database\FiveTwo\Schema\PostgresifyBuilder;
+use MartiMarkov\Postgresify\Database\Schema\Grammars\PostgresGrammar as PostgresifySchemaGrammar;
 use Illuminate\Database\PostgresConnection as BasePostgresConnection;
 
 class PostgresConnection extends BasePostgresConnection

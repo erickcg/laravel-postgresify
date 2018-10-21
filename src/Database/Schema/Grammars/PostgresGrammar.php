@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\Postgresify\Database\Schema\Grammars;
+namespace MartiMarkov\Postgresify\Database\Schema\Grammars;
 
 use Illuminate\Database\Schema\Grammars\PostgresGrammar as BasePostgresGrammar;
 use Illuminate\Support\Fluent;

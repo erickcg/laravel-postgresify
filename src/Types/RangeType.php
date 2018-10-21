@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\Postgresify\Types;
+namespace MartiMarkov\Postgresify\Types;
 
 abstract class RangeType extends AbstractType
 {

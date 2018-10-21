@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\Postgresify;
+namespace MartiMarkov\Postgresify;
 
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\DatabaseServiceProvider as BaseDatabaseServiceProvider;

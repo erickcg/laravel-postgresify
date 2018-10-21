@@ -1,8 +1,8 @@
 <?php
 
-namespace Aejnsn\Postgresify\Database\FiveOne\Schema;
+namespace MartiMarkov\Postgresify\Database\FiveOne\Schema;
 
-use Aejnsn\Postgresify\Database\Schema\PostgresifyBlueprint;
+use MartiMarkov\Postgresify\Database\Schema\PostgresifyBlueprint;
 use Closure;
 use Illuminate\Database\Schema\Builder;
 

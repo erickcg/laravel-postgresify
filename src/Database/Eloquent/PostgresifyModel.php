@@ -1,11 +1,11 @@
 <?php
 
-namespace Aejnsn\Postgresify\Database\Eloquent;
+namespace MartiMarkov\Postgresify\Database\Eloquent;
 
-use Aejnsn\Postgresify\PostgresifyTypeCaster;
-use Aejnsn\Postgresify\Types\IntegerRange;
-use Aejnsn\Postgresify\Types\NumericRange;
-use Aejnsn\Postgresify\Types\TimestampRange;
+use MartiMarkov\Postgresify\PostgresifyTypeCaster;
+use MartiMarkov\Postgresify\Types\IntegerRange;
+use MartiMarkov\Postgresify\Types\NumericRange;
+use MartiMarkov\Postgresify\Types\TimestampRange;
 use Illuminate\Database\Eloquent\Model;
 use Smiarowski\Postgres\Model\Traits\PostgresArray;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Aejnsn\Postgresify;
+namespace MartiMarkov\Postgresify;
 
-use Aejnsn\Postgresify\Types\Circle;
-use Aejnsn\Postgresify\Types\NumericRange;
-use Aejnsn\Postgresify\Types\Point;
+use MartiMarkov\Postgresify\Types\Circle;
+use MartiMarkov\Postgresify\Types\NumericRange;
+use MartiMarkov\Postgresify\Types\Point;
 use Exception;
 
 class PostgresifyTypeCaster

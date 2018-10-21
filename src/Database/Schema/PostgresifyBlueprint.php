@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\Postgresify\Database\Schema;
+namespace MartiMarkov\Postgresify\Database\Schema;
 
 use Illuminate\Database\Schema\Blueprint;
 

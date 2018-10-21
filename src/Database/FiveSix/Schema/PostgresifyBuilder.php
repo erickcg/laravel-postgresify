@@ -1,6 +1,6 @@
 <?php
 
-namespace Aejnsn\Postgresify\Database\FiveSix\Schema;
+namespace MartiMarkov\Postgresify\Database\FiveSix\Schema;
 
 use Closure;
 use Illuminate\Database\Schema\PostgresBuilder;
