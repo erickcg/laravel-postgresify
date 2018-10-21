@@ -30,6 +30,11 @@ class PostgresGrammar extends BasePostgresGrammar
         return 'point';
     }
 
+    protected function typePostGisPoint(Fluent $column)
+    {
+        return $this->formatPostGisType('point');
+    }
+
     /**
      * Create the column definition for a line represented as a standard linear equation Ax + By + C = 0.
      *
@@ -83,6 +88,17 @@ class PostgresGrammar extends BasePostgresGrammar
     protected function typePolygon(Fluent $column)
     {
         return 'polygon';
+    }
+
+    /**
+     * Create the column definition for a spatial Polygon type.
+     *
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    protected function typePostGisPolygon(Fluent $column)
+    {
+        return $this->formatPostGisType('polygon');
     }
 
     /**
@@ -192,5 +208,18 @@ class PostgresGrammar extends BasePostgresGrammar
     protected function typeDateRange(Fluent $column)
     {
         return 'daterange';
+    }
+
+
+
+    /**
+     * Format the column definition for a PostGIS spatial type.
+     *
+     * @param  string  $type
+     * @return string
+     */
+    private function formatPostGisType(string $type)
+    {
+        return "geography($type, 4326)";
     }
 }

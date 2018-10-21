@@ -15,7 +15,9 @@ class DatabaseServiceProvider extends BaseDatabaseServiceProvider
     public function register()
     {
         $this->app->singleton('db.factory', function ($app) {
-            if (version_compare($app->version(), '5.2.0', '>=')) {
+            if (version_compare($app->version(), '5.6.0', '>=')) {
+                return new Database\FiveSix\Connectors\ConnectionFactory($app);
+            } elseif (version_compare($app->version(), '5.2.0', '>=')) {
                 return new Database\FiveTwo\Connectors\ConnectionFactory($app);
             }
             return new Database\FiveOne\Connectors\ConnectionFactory($app);
