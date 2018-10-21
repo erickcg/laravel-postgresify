@@ -204,7 +204,7 @@ Functions and Operators documentation](http://www.postgresql.org/docs/9.4/static
 
 ## License
 
-- This package is licensed under the [MIT license](https://raw.githubusercontent.com/aejnsn/postgresify/master/LICENSE).
+- This package is licensed under the [MIT license](https://gitlab.com/martimarkov/postgresify/blob/master/LICENSE).
 
 ## References
 
