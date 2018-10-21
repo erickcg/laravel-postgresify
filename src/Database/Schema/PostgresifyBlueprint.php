@@ -9,7 +9,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new netmask (CIDR-notation) (cidr) column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function netmask($column)
@@ -20,7 +20,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new box column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function box($column)
@@ -31,7 +31,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new circle column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function circle($column)
@@ -42,7 +42,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new line column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function line($column)
@@ -53,7 +53,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new line segment (lseg) column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function lineSegment($column)
@@ -64,7 +64,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new path column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function path($column)
@@ -75,10 +75,10 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new point column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
-    public function point($column)
+    public function point($column, $srid = null)
     {
         return $this->addColumn('point', $column);
     }
@@ -86,7 +86,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new polygon column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function polygon($column)
@@ -97,7 +97,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new big (64-bit) integer range (int8) column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function bigIntegerRange($column)
@@ -108,7 +108,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new date range column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function dateRange($column)
@@ -119,7 +119,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new (32-bit) integer range (int4) column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function integerRange($column)
@@ -130,7 +130,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new numeric range (numrange) column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function numericRange($column)
@@ -141,7 +141,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new timestamp range (tsrange) column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function timestampRange($column)
@@ -152,7 +152,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new timestamp w/ timezone range (tstzrange) column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function timestampTimezoneRange($column)
@@ -163,7 +163,7 @@ class PostgresifyBlueprint extends Blueprint
     /**
      * Create a new money column on the table.
      *
-     * @param  string  $column
+     * @param  string $column
      * @return \Illuminate\Support\Fluent
      */
     public function money($column)
